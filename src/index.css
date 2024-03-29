@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Cinzel:wght@400;500;600&family=Roboto:wght@400;500;700;900&display=swap');
+
+.brandFont {
+    font-family: 'Cinzel', serif;
+}
+
+.secondFont {
+    font-family: 'Roboto', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.myBtn {
+    @apply px-6 py-3 rounded-md bg-primary text-white text-sm font-semibold tracking-wide cursor-pointer
+}
+
+.navActive {
+    @apply text-base inline-flex items-center gap-1 font-semibold text-white bg-transparent hover:bg-transparent
+}
+
+.navDefault {
+    @apply text-base inline-flex items-center gap-1 font-semibold bg-transparent hover:bg-transparent hover:text-white
+}
+
+.inputField {
+    @apply w-full px-6 py-2 rounded-md bg-gray-600 bg-opacity-20 focus:outline focus:outline-accent disabled:opacity-70 disabled:cursor-not-allowed placeholder:text-sm placeholder:text-red-600
+}
+
+.myBtnSec {
+    @apply px-4 py-1 inline-flex items-center border-b border-primary bg-primary text-neutral font-semibold rounded hover:bg-transparent hover:text-primary transition-all duration-500 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed w-full text-center
+}
+
+.dash-active {
+    @apply w-full bg-base-100 font-bold text-primary py-3 px-3 rounded-tl-lg rounded-bl-lg
+}
+
+.dash-default {
+    @apply font-semibold py-3 px-3 text-neutral
+}
+
+.navBg {
+    background: rgba(59, 97, 201, 0.308);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+}
