@@ -8,13 +8,13 @@ import Scholarship from "./Scholarship/Scholarship";
 
 const Home = () => {
     return (
-        <section className="space-y-20">
+        <section>
             <Banner />
             <Mission />
             <Responsibility />
             <RecentJobs />
             <Gallery />
-            <Scholarship />
+            {/* <Scholarship /> */}
             <News />
         </section>
     );
