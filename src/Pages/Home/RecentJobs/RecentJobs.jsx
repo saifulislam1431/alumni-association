@@ -11,12 +11,15 @@ const RecentJobs = () => {
             </div>
             <div className="my-20 grid grid-cols-12 gap-10">
                 {
-                    allJobs?.slice(0, 8)?.map((job) => <div key={job?._id} className="col-span-10 md:col-span-6 lg:col-span-3 w-full border p-3 rounded border-primary flex flex-col gap-3">
-                        <h1 className="brandFont text-center font-semibold">{job?.companyName}</h1>
-                        <p className="font-bold brandFont text-primary">{job?.jobTitle}</p>
-
-                        <div>
-                            <p>{job?.jobDescription?.slice(0, 110)}... <Link to={`/job-details/${job?._id}`} className="font-semibold text-primary"> Read More</Link></p>
+                    allJobs?.slice(0, 4)?.map((job) => <div key={job?._id} className="col-span-full lg:col-span-4 card w-96 bg-base-100 shadow-xl">
+                        <div className="card-body">
+                            <h2 className="card-title text-primary">{job?.position}</h2>
+                            <p className='font-semibold text-sm'>By {job?.company_name}</p>
+                            <p>{job?.job_type}</p>
+                            <p>{job?.working_hours}</p>
+                            <div className="card-actions justify-end">
+                                <Link className='myBtn' to={`/dashboard/apply-job-post/${job?._id}`}>Apply</Link>
+                            </div>
                         </div>
                     </div>)
                 }

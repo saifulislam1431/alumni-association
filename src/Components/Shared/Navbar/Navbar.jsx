@@ -3,11 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { HiChevronRight } from "react-icons/hi2";
 import Swal from "sweetalert2";
+import useAdmin from "../../../Hooks/useAdmin";
+import useAlumni from "../../../Hooks/useAlumni";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const isAdmin = false;
-    const isAlumni = false;
+    const { isAdmin } = useAdmin();
+    const { isAlumni } = useAlumni();
+    console.log("admin", isAdmin);
+    console.log("alumni", isAlumni);
     const { user, logOut } = useAuth();
     // console.log(user);
     const handleOut = () => {
@@ -36,16 +40,16 @@ const Navbar = () => {
 
 
         {
-            user ? <>
-                <li><NavLink to={`${isAdmin ? "/dashboard/manage-blog" : isAlumni ? "/dashboard/alumni-profile" : "/dashboard/my-profile"}`} className={({ isActive }) => (isActive ? "navActive" : "navDefault")}>Profile <HiChevronRight className='h-5 w-5' /></NavLink></li>
-
-                <li><button className='navDefault' onClick={handleOut}>Logout <HiChevronRight className='h-5 w-5' /></button></li>
-            </> : ""
+            user && <>
+                <li><NavLink to={`${isAlumni ? "/dashboard/alumni-profile" : isAdmin ? "/dashboard/manage-users" : "/dashboard/my-profile"}`} className={({ isActive }) => (isActive ? "navActive" : "navDefault")}>Profile <HiChevronRight className='h-5 w-5' /></NavLink></li>
+            </>
         }
 
-        <li className='lg:hidden'>
-            <Link to="/login" className="myBtn">Join Us</Link>
-        </li>
+        {
+            user ? <li><button className='myBtn lg:hidden' onClick={handleOut}>Logout <HiChevronRight className='h-5 w-5' /></button></li> : <li className='lg:hidden'>
+                <Link to="/login" className="myBtn">Join Us</Link>
+            </li>
+        }
     </>
 
     const logoContainer = <>
@@ -76,7 +80,10 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <Link to="/login" className="myBtn">Join Us</Link>
+                {
+                    user ? <button className='myBtn inline-flex items-center' onClick={handleOut}>Logout <HiChevronRight className='h-5 w-5' /></button> :
+                        <Link to="/login" className="myBtn">Join Us</Link>
+                }
             </div>
 
             <div className="navbar-end flex lg:hidden">
@@ -94,7 +101,7 @@ const Navbar = () => {
                 </label>
 
 
-                <ul className={`${isOpen ? "absolute top-20 left-0 space-y-5 flex flex-col items-center navBg w-full py-6 transition-all duration-300" : "absolute -top-96 left-0 space-y-5 flex flex-col items-center bg-success bg-opacity-40 w-full py-6 transition-all duration-300"}`}>
+                <ul className={`${isOpen ? "absolute top-20 left-0 space-y-5 flex flex-col items-center navBg w-full py-6 transition-all duration-300" : "absolute -top-[500px] left-0 space-y-5 flex flex-col items-center bg-success bg-opacity-40 w-full py-6 transition-all duration-300"}`}>
                     {navItem}
                 </ul>
 
