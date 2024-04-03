@@ -44,11 +44,15 @@ const Dashboard = () => {
 
                                 <NavLink to="/dashboard/alumni-profile" className={({ isActive }) => (isActive ? "dash-active mt-5" : "dash-default mt-5")}><HiOutlineUserCircle className='inline-flex items-center h-6 w-6' /> My Profile</NavLink>
 
-                                <NavLink to="/dashboard/manage-events-stories" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiCreditCard className='inline-flex items-center h-6 w-6' /> Events And Stories</NavLink>
+                                <NavLink to="/dashboard/manage-events-stories" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniListBullet className='inline-flex items-center h-6 w-6' /> Previous Opportunity</NavLink>
 
-                                <NavLink to="/dashboard/hiring-and-opportunity" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiOutlineUserPlus className='inline-flex items-center h-6 w-6' /> Hiring Opportunity</NavLink>
+                                <NavLink to="/dashboard/events-stories" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniListBullet className='inline-flex items-center h-6 w-6' /> Previous Events</NavLink>
 
-                                <NavLink to="/dashboard/share-blogs" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniPencilSquare className='inline-flex items-center h-6 w-6' /> Share-blogs</NavLink>
+                                <NavLink to="/dashboard/hiring-and-opportunity" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniPencilSquare className='inline-flex items-center h-6 w-6' />Create Opportunity </NavLink>
+
+                                <NavLink to="/dashboard/create-events" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniPencilSquare className='inline-flex items-center h-6 w-6' />Create Events </NavLink>
+
+                                <NavLink to="/dashboard/share-blogs" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniPencilSquare className='inline-flex items-center h-6 w-6' /> Share blogs</NavLink>
                             </>
 
                                 :

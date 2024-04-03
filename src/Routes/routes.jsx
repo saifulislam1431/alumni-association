@@ -26,6 +26,8 @@ import StudentProfile from "../Pages/Dashboard/Student/StudentProfile/StudentPro
 import ApplyIntern from "../Pages/Dashboard/Student/ApplyIntern/ApplyIntern";
 import JobDetails from "../Pages/Dashboard/Student/JobDetails/JobDetails";
 import CreateAsAlumni from "../Pages/Dashboard/Student/CreateAsAlumni/CreateAsAlumni";
+import CreateEvents from "../Pages/Dashboard/Alumni/CreateEvents/CreateEvents";
+import PreviousEvents from "../Pages/Dashboard/Alumni/PreviousEvents/PreviousEvents";
 
 export const router = createBrowserRouter([
     {
@@ -103,6 +105,14 @@ export const router = createBrowserRouter([
                     {
                         path: "hiring-and-opportunity",
                         element: <PrivateRoute><AlumniRoute><HiringOpportunities /></AlumniRoute></PrivateRoute>
+                    },
+                    {
+                        path: "create-events",
+                        element: <PrivateRoute><AlumniRoute><CreateEvents /></AlumniRoute></PrivateRoute>
+                    },
+                    {
+                        path: "events-stories",
+                        element: <PrivateRoute><AlumniRoute><PreviousEvents /></AlumniRoute></PrivateRoute>
                     },
                     {
                         path: "share-blogs",
