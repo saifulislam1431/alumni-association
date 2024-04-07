@@ -36,7 +36,7 @@ const Navbar = () => {
 
         <li><NavLink to="/event" className={({ isActive }) => (isActive ? "navActive" : "navDefault")}>Event <HiChevronRight className='h-5 w-5' /></NavLink></li>
 
-        <li><NavLink to="/about" className={({ isActive }) => (isActive ? "navActive" : "navDefault")}>About <HiChevronRight className='h-5 w-5' /></NavLink></li>
+        <li><NavLink to="/blog" className={({ isActive }) => (isActive ? "navActive" : "navDefault")}>Blogs <HiChevronRight className='h-5 w-5' /></NavLink></li>
 
 
         {

@@ -32,8 +32,7 @@ const Dashboard = () => {
                     {
                         isAdmin ?
                             <>
-                                <NavLink to="/dashboard/manage-committee" className={({ isActive }) => (isActive ? "dash-active mt-5" : "dash-default mt-5")}><HiMiniAdjustmentsHorizontal className='inline-flex items-center h-6 w-6' /> Manage Committee</NavLink>
-
+                                {/* <NavLink to="/dashboard/manage-committee" className={({ isActive }) => (isActive ? "dash-active mt-5" : "dash-default mt-5")}><HiMiniAdjustmentsHorizontal className='inline-flex items-center h-6 w-6' /> Manage Committee</NavLink> */}
 
                                 <NavLink to="/dashboard/manage-users" className={({ isActive }) => (isActive ? "dash-active" : "dash-default")}><HiMiniUserGroup className='inline-flex items-center h-6 w-6' /> Manage Users</NavLink>
 

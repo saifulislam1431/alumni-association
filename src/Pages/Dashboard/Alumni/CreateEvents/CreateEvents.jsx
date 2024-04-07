@@ -135,7 +135,7 @@ const CreateEvents = () => {
                 )}
 
 
-                <input type="submit" value="Sign Up" className="btn btn-primary w-96 lg:w-[500px]" />
+                <input type="submit" value="Create" className="btn btn-primary w-96 lg:w-[500px]" />
             </form>
         </section>
     );

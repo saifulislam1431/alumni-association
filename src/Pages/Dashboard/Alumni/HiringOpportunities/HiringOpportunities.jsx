@@ -14,7 +14,8 @@ const HiringOpportunities = () => {
 
 
     const onSubmit = async (data) => {
-
+        data.responsibilities = data.responsibilities.split('\n').map(item => item.trim());
+        data.requirements = data.requirements.split('\n').map(item => item.trim());
         const response = await axiosSecure.post("/create-job-post", data)
         if (response?.data?.insertedId) {
             Swal.fire({
